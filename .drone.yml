@@ -23,3 +23,16 @@ steps:
   - pip install -U pytest
   - pytest --version
   - pytest
+  
+---
+kind: pipeline
+name: python-2
+
+steps:
+- name: test
+  image: python:2
+  commands:
+  - pip install -r requirements.txt
+  - pip install -U pytest
+  - pytest --version
+  - pytest
