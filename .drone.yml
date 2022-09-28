@@ -1,17 +1,22 @@
+---
 kind: pipeline
 type: docker
 name: default
 
 steps:
-- name: test
-  image: golang:1.13
+- name: backend
+  image: golang
   commands:
   - go build
-  - go test -v
+  - go test
 
-services:
-- name: redis
-  image: redis
+- name: frontend
+  image: node
+  commands:
+  - npm install
+  - npm run test
+
+...
 
 
 
