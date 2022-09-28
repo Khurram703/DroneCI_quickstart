@@ -1,5 +1,4 @@
 ---
-
 kind: pipeline
 name: default
 steps:
@@ -36,5 +35,4 @@ steps:
   - pip install -U pytest
   - pytest --version
   - pytest
-
 ---
