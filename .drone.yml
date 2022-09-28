@@ -1,17 +1,5 @@
 ---
 kind: pipeline
-name: default
-steps:
-- name: test
-  image: python:2
-  commands:
-  - pip install -r requirements.txt
-  - pip install -U pytest
-  - pytest --version
-  - pytest
-
----
-kind: pipeline
 name: python-3-9
 
 steps:
