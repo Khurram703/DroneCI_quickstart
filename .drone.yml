@@ -8,6 +8,10 @@ steps:
   commands:
   - echo hello world
 
+trigger:
+  event:
+  - push
+
 ---
 kind: pipeline
 type: docker
@@ -17,7 +21,12 @@ steps:
 - name: greeting
   image: alpine
   commands:
-  - echo bonjour mon
+  - echo bonjour monde
+  
+trigger:
+  event:
+  - pull_request
+
 
 
 
