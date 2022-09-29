@@ -10,4 +10,7 @@ platform:
 steps:
 - name: greeting
   commands:
-  - echo hello world
+  - ls -al
+  - whoami
+  - id
+  - hostname
