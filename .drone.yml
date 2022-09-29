@@ -1,11 +1,13 @@
 ---
 kind: pipeline
-type: docker
-name: frontend-backend
+type: exec
+name: default
+
+platform:
+  os: linux
+  arch: amd64
 
 steps:
-- name: build
-  image: node
+- name: greeting
   commands:
-  - npm install
-  - npm test
+  - echo hello world
