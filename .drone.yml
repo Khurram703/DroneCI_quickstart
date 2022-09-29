@@ -4,6 +4,7 @@ name: test-on-amd64
 
 platform:
   arch: amd64
+  os: linux
 
 steps:
 - name: test
@@ -16,10 +17,11 @@ steps:
 
 ---
 kind: pipeline
-name: test-on-arm64
+name: test-on-amd64
 
 platform:
-  arch: arm64
+  arch: amd64
+  os: windows
 
 steps:
 - name: test
