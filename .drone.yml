@@ -17,7 +17,7 @@ steps:
 
 ---
 kind: pipeline
-name: test-on-windows
+name: test-on-windows Operating system
 
 platform:
   arch: amd64
