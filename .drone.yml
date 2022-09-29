@@ -1,46 +1,11 @@
 ---
 kind: pipeline
-name: test-on-amd64
-
-platform:
-  arch: amd64
-  os: linux
+type: docker
+name: frontend
 
 steps:
-- name: test
-  image: python
+- name: build
+  image: node
   commands:
-  - pip install -r requirements.txt
-  - pip install -U pytest
-  - pytest --version
-  - pytest
-
----
-kind: pipeline
-name: test-on-windows OS
-
-platform:
-  arch: amd64
-  os: windows
-
-steps:
-- name: test
-  image: python
-  commands:
-  - pip install -r requirements.txt
-  - pip install -U pytest
-  - pytest --version
-  - pytest
-  
----
-kind: pipeline
-name: python-2
-
-steps:
-- name: test
-  image: python:2
-  commands:
-  - pip install -r requirements.txt
-  - pip install -U pytest
-  - pytest --version
-  - pytest
+  - npm install
+  - npm test
