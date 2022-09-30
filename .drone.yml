@@ -21,7 +21,9 @@ steps:
   - name: deps
     path: /go
   commands:
+  - ls -al
   - go test
+  - ls -al
 
 - name: build
   image: golang
@@ -29,7 +31,9 @@ steps:
   - name: deps
     path: /go
   commands:
+  - ls -al
   - go build
+  - ls -al
 
 volumes:
 - name: deps
