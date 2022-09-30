@@ -1,0 +1,10 @@
+---
+kind: pipeline
+name: go-1-11
+
+steps:
+- name: test
+  image: golang
+  commands:
+  - go version
+ 
