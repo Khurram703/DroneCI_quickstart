@@ -13,8 +13,12 @@ steps:
   - go get
   - go test -v
   - go build
+  - ls -al
 
-services:
-- name: redis
-  image: redis
+- name: frontend
+  image: node
+  commands:
+  - npm install
+  - npm run test
+
  
