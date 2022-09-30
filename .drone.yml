@@ -1,42 +1,25 @@
 ---
 kind: pipeline
-name: go-1-11
+name: default
 
 steps:
 - name: test
-  image: golang
-  commands:
-  - ls -al
-  - go version
-  - go mod init example.com/hello 
-  - go run ./helloworld.go
-  - go get
-  - go test -v
-  - go build
-  - ls -al
-
-- name: test1
-  image: golang
+  image: docker:dind
   volumes:
-  - name: deps
-    path: /go
+  - name: dockersock
+    path: /var/run
   commands:
-  - ls -al
-  - go test
-  - ls -al
+  - sleep 5 # give docker enough time to start
+  - docker ps -a
 
-- name: build
-  image: golang
+services:
+- name: docker
+  image: docker:dind
+  privileged: true
   volumes:
-  - name: deps
-    path: /go
-  commands:
-  - ls -al
-  - go build
-  - ls -al
+  - name: dockersock
+    path: /var/run
 
 volumes:
-- name: deps
+- name: dockersock
   temp: {}
-
- 
