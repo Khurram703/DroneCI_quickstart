@@ -8,6 +8,6 @@ steps:
   commands:
   - ls -al
   - go version
-  - go mod init example.com/helloworld
+  - go mod init example.com/helloworld.go
   - go run .\helloworld.go
  
