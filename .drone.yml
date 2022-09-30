@@ -6,5 +6,7 @@ steps:
 - name: test
   image: golang
   commands:
+  - ls -al
   - go version
+  - go run .\helloworld.go
  
