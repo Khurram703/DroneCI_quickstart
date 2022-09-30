@@ -15,10 +15,24 @@ steps:
   - go build
   - ls -al
 
-- name: frontend
-  image: node
+- name: test1
+  image: golang
+  volumes:
+  - name: deps
+    path: /go
   commands:
-  - npm install
-  - npm run test
+  - go test
+
+- name: build
+  image: golang
+  volumes:
+  - name: deps
+    path: /go
+  commands:
+  - go build
+
+volumes:
+- name: deps
+  temp: {}
 
  
