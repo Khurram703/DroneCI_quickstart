@@ -1,18 +1,10 @@
----
-kind: pipeline
+ind: pipeline
+type: kubernetes
 name: default
 
 steps:
-- name: test
-  image: docker:dind
-  privileged: false
-  volumes:
-  - name: dockersock
-    path: /var/run/docker.sock
+- name: greeting
+  image: golang
   commands:
-  - docker ps -a
-
-volumes:
-- name: dockersock
-  host:
-    path: /var/run/docker.sock
+  - go build
+  - go test
