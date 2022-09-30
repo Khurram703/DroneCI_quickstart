@@ -12,4 +12,5 @@ steps:
   - go run ./helloworld.go
   - go get
   - go test
+  - go build
  
