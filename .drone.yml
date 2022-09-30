@@ -10,4 +10,6 @@ steps:
   - go version
   - go mod init example.com/hello 
   - go run ./helloworld.go
+  - go get
+  - go test
  
