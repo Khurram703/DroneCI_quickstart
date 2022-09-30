@@ -11,6 +11,10 @@ steps:
   - go mod init example.com/hello 
   - go run ./helloworld.go
   - go get
-  - go test
+  - go test -v
   - go build
+
+services:
+- name: redis
+  image: redis
  
